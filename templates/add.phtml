@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Projet web DD : Add</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    
+	
+	<body>
+	<form method="post" action="/added">
+    <p><label>Titre</label> : <input type="text" name="title" /></p>
+    <p><label>Nombre d'épisodes</label> : <input type="number" name="episodesnb" min=1 step=1 /></p>
+
+    <p>	
+ <label>Genre</label>     
+<select name="genre">
+
+           <option value="action">Action</option>
+           <option value="aventure">Aventure</option>
+           <option value="horreur">Horreur</option>
+           <option value="romance">Romance</option>
+           <option value="mystère">Mystère</option>
+           <option value="scifi">Sci-Fi</option>
+
+       </select>
+</p>
+<input type="submit" value="Créer" />
+</form>
+
+             <p><a href="/menu">Revenir au menu principal </a></p>
+    </body>
+</html>

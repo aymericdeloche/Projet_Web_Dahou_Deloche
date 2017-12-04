@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Projet web DD : Delete</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #000;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+			
+			table{
+				border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+				margin:auto;
+			}
+
+			td,th{
+				border: 1px solid black;
+			}
+			
+        </style>
+    </head>
+    <body>
+        <h1>Showing the database</h1>
+      
+<div>		
+			<table>
+			<tr>
+                <th> id </th>
+				<th> Titre du manga </th>
+				<th> Nombre d'épisodes </th>
+				<th> Genre </th>
+			</tr>
+<?php foreach ($mangas as $manga) :?> 
+   <tr>
+   <td><?=$manga->id?></td>
+            <td><?=$manga->title?></td>
+   
+          <td><?=$manga->episodesnb?></td>
+   
+          <td><?=$manga->genre?></td>
+
+   </tr>
+   <?php endforeach; ?>
+</table>
+</div>	
+
+
+<form method="post" action="/deleted">
+    
+    <p><label>id</label> : <input type="number" name="id" min=1 step=1 /></p>
+
+<input type="submit" value="Supprimer" />
+</form>
+
+
+
+
+
+
+
+		<p><a href="/menu"> Revenir au menu principal </a></p>	
+        
+    </body>
+</html>
