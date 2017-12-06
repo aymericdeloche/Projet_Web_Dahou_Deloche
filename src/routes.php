@@ -8,6 +8,7 @@ use Slim\Http\Response;
 $app->get('/show', function (Request $request, Response $response, array $args) {
 	
 $this->db;
+$mangas = NULL; 
 $mangas = Mangas::all();
 
     return $this->renderer->render($response, 'show.phtml',['mangas' => $mangas]);
@@ -125,30 +126,12 @@ $app->post('/updated', function (Request $request, Response $response, array $ar
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
-
-    // Render index view
-    return $this->renderer->render($response, 'menu.phtml', $args);
+   $this->db;
+$mangas = NULL; 
+$mangas = Mangas::all();
+    
+    return $this->renderer->render($response, 'menu.phtml', ['mangas' => $mangas]);
 });
 
 
