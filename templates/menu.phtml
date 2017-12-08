@@ -1,66 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Projet web DD</title>
-        
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
- <link rel="stylesheet" type="text/css" href="stylemenu.css">
+<head>
+    <meta charset="utf-8"/>
+    <title>Projet web DD</title>
 
- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style_menu.css">
 
-<!-- <link rel="stylesheet" href = "style.css"> -->
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    </head>
+</head>
 
 
-    
-    <body>
 
-        <div>Base de données : Mangas</div>
+<body>
+    <h1> Mangachier </h1>
+    <div class = "intro">Base de données : Mangas</div>
 
-        
-        <nav class="navbar navbar-dark bg-dark">
-        
-     <div class = "banniere">
-     
-        <a class="navbar-brand" href="#">Mangachier</a>
 
+    <nav class="navbar navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="/menu">Mangachier</a>
+         <p></p>
+          <p></p>
         <a class="navbar-brand" href="/show">Show</a>
         <a class="navbar-brand" href="/add">Add</a>
         <a class="navbar-brand" href="/update">Update</a>
         <a class="navbar-brand" href="/delete">Delete</a>
-    </div>
-    </div>
-</div>
-</div>
 </nav>
 
 
-        <div>       
-            <table class="table table-bordered">
-            <tr>
-                <th> id </th>
-                <th> Titre du manga </th>
-                <th> Nombre d'épisodes </th>
-                <th> Genre </th>
-            </tr>
-<?php foreach ($mangas as $manga) :?> 
-   <tr>
+<div>       
+    <table class="table table-bordered">
+        <tr>
+            <th> id </th>
+            <th> Titre du manga </th>
+            <th> Nombre d'épisodes </th>
+            <th> Genre </th>
+        </tr>
+        <?php foreach ($mangas as $manga) :?> 
+        <tr>
 
 
-       <td><?=$manga->id?></td>
+         <td><?=$manga->id?></td>
 
-       <td><?=$manga->title?></td>
+         <td><?=$manga->title?></td>
 
-       <td><?=$manga->episodesnb?></td>
+         <td><?=$manga->episodesnb?></td>
 
-       <td><?=$manga->genre?></td>
+         <td><?=$manga->genre?></td>
 
-   </tr>
-   <?php endforeach; ?>
+
+         <td><a href="/deleted">Supprimer</a></td>   
+
+     </tr>
+ <?php endforeach; ?>
 </table>
 </div>  
-    
-    </body>
+
+</body>
 </html>

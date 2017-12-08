@@ -15,6 +15,15 @@ $mangas = Mangas::all();
 	
 });
 
+$app->post('/showone', function (Request $request, Response $response, array $args) {
+    $this->db;
+    $mangas = NULL; 
+    $mangas = Mangas::$request->getParam('id');
+   
+    return $this->renderer->render($response, 'showone.phtml', $args);
+    
+});
+
 
 
 $app->get('/createtable', function (Request $request, Response $response, array $args) {
