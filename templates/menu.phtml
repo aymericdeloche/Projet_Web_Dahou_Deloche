@@ -37,6 +37,7 @@
             <th> Titre du manga </th>
             <th> Nombre d'épisodes </th>
             <th> Genre </th>
+            <th> Description </th>
         </tr>
         <?php foreach ($mangas as $manga) :?> 
         <tr>
@@ -49,6 +50,8 @@
          <td><?=$manga->episodesnb?></td>
 
          <td><?=$manga->genre?></td>
+
+         <td><?=$manga->description?></td>
 
 
          <td><a href="/deleted">Supprimer</a></td>   

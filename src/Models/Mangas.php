@@ -5,5 +5,6 @@ class Mangas extends Eloquent {
 	protected $title = ['title'];
 	protected $episodesnb = ['episodesnb'];
 	protected $genre = ['genre'];
+	protected $description = ['description'];
 	public $timestamps = false;
 }

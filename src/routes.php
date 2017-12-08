@@ -38,6 +38,7 @@ $app->get('/createtable', function (Request $request, Response $response, array 
         $table->string('title')->default('');
 		$table->string('episodesnb')->default('');
 		$table->string('genre')->default('');
+        $table->string('description')->default('');
         
     });	
 	
@@ -68,6 +69,7 @@ $app->post('/added', function (Request $request, Response $response, array $args
     $manga->title = $request->getParam('title');
     $manga->episodesnb = $request->getParam('episodesnb');
     $manga->genre = $request->getParam('genre');
+    $manga->description = $request->getParam('description');
     /*$manga = Mangas::firstOrCreate(
         ['title' => $manga->title]
     );*/
@@ -121,7 +123,7 @@ $app->post('/updated', function (Request $request, Response $response, array $ar
         $manga->genre = $request->getParam('genre');
    // }
     
-    
+    $manga->genre = $request->getParam('description');
     $manga->save();
 
 
