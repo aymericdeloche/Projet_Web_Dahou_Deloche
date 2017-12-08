@@ -27,10 +27,14 @@
         <a class="navbar-brand" href="/add">Add</a>
         <a class="navbar-brand" href="/update">Update</a>
         <a class="navbar-brand" href="/delete">Delete</a>
+        <form class="form-inline">
+          <input name="search" type="text" placeholder="search"/>
+          <input type="submit">
+        </form>
 </nav>
 
 
-<div>       
+<div>
     <table class="table table-bordered">
         <tr>
             <th> id </th>
@@ -39,7 +43,7 @@
             <th> Genre </th>
             <th> Description </th>
         </tr>
-        <?php foreach ($mangas as $manga) :?> 
+        <?php foreach ($mangas as $manga) :?>
         <tr>
 
 
@@ -54,12 +58,12 @@
          <td><?=$manga->description?></td>
 
 
-         <td><a href="/deleted">Supprimer</a></td>   
+         <td><a class="btn btn-primary" role="button" href="/update">Editer </a> <a class="btn btn-primary" role="button" href="/deleted">Supprimer</a></td>
 
      </tr>
  <?php endforeach; ?>
 </table>
-</div>  
+</div>
 
 </body>
 </html>
