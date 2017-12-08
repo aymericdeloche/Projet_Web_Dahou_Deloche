@@ -22,9 +22,10 @@ body {
 
             }
 
-            th { 
-color:blue;
-font-weight: 800;
+            th {
+              color:#375D81;
+              font-weight: 800;
+              background-color: #98DB9C;
             }
 
             td {
