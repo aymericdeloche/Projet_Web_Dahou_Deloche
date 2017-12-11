@@ -23,7 +23,7 @@
                 font-weight: 200;
                 margin-bottom: 0;
             }
-			
+
 			table{
 				border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
 				margin:auto;
@@ -32,43 +32,40 @@
 			td,th{
 				border: 1px solid black;
 			}
-			
+
         </style>
     </head>
     <body>
         <h1>Showing the database</h1>
-      
-<div>		
-			<table>
+
+<!--<div>
+		<table>
 			<tr>
-                <th> id </th>
+        <th> id </th>
 				<th> Titre du manga </th>
 				<th> Nombre d'épisodes </th>
 				<th> Genre </th>
 			</tr>
-<?php foreach ($mangas as $manga) :?> 
-   <tr>
-   <td><?=$manga->id?></td>
-            <td><?=$manga->title?></td>
-   
-          <td><?=$manga->episodesnb?></td>
-   
-          <td><?=$manga->genre?></td>
-
-   </tr>
-   <?php endforeach; ?>
-</table>
-</div>	
-
+      <?php foreach ($mangas as $manga) :?>
+      <tr>
+        <td><?=$manga->id?></td>
+        <td><?=$manga->title?></td>
+        <td><?=$manga->episodesnb?></td>
+        <td><?=$manga->genre?></td>
+      </tr>
+      <?php endforeach; ?>
+    </table>
+</div>
+-->
 
 <form method="post" action="/updated">
-    
-    <p><label>id</label> : <input type="number" name="id" min=1 step=1 /></p>
+
+    <p><label>id</label> : <input type="number" name="id" min=1 step=1 value="<?=$manga->id?>"/></p>
     <p><label>Titre</label> : <input type="text" name="title" /></p>
     <p><label>Nombre d'épisodes</label> : <input type="number" name="episodesnb" min=1 step=1 /></p>
 
-    <p>	
- <label>Genre</label>     
+    <p>
+ <label>Genre</label>
 <select name="genre">
 
            <option value="action">Action</option>
@@ -90,7 +87,7 @@
 
 
 
-		<p><a href="/menu"> Revenir au menu principal </a></p>	
-        
+		<p><a href="/menu"> Revenir au menu principal </a></p>
+
     </body>
 </html>

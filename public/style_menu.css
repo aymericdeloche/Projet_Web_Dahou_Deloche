@@ -1,6 +1,6 @@
 
 body {
-                margin: 50px 0 0 0;
+                margin: 0 0 0 0;
                 padding: 0;
                 width: 100%;
                 font-family: Cambria,Georgia,serif;
@@ -29,6 +29,7 @@ body {
             }
 
             td {
+              text-align: center;
             }
 
             label {

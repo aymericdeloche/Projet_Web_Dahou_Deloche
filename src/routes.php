@@ -6,29 +6,29 @@ use Slim\Http\Response;
 // Routes
 
 $app->get('/show', function (Request $request, Response $response, array $args) {
-	
+
 $this->db;
-$mangas = NULL; 
+$mangas = NULL;
 $mangas = Mangas::all();
 
     return $this->renderer->render($response, 'show.phtml',['mangas' => $mangas]);
-	
+
 });
 
 $app->post('/showone', function (Request $request, Response $response, array $args) {
     $this->db;
-    $mangas = NULL; 
+    $mangas = NULL;
     $mangas = Mangas::$request->getParam('id');
-   
+
     return $this->renderer->render($response, 'showone.phtml', $args);
-    
+
 });
 
 
 
 $app->get('/createtable', function (Request $request, Response $response, array $args) {
 	$this->db;
-   
+
    $capsule = new \Illuminate\Database\Capsule\Manager;
 
     $capsule::schema()->dropIfExists('mangas');
@@ -39,31 +39,31 @@ $app->get('/createtable', function (Request $request, Response $response, array 
 		$table->string('episodesnb')->default('');
 		$table->string('genre')->default('');
         $table->string('description')->default('');
-        
-    });	
-	
+
+    });
+
     // Render index view
     return $this->renderer->render($response, 'menu.phtml', $args);
-	
-	
+
+
 });
 
 
 $app->get('/add', function (Request $request, Response $response, array $args) {
 	$this->db;
-   
+
    $capsule = new \Illuminate\Database\Capsule\Manager;
-	
+
     // Render index view
     return $this->renderer->render($response, 'add.phtml', $args);
-	
-	
+
+
 });
 
 
 $app->post('/added', function (Request $request, Response $response, array $args) {
     $this->db;
-    
+
     $manga = new Mangas;
 
     $manga->title = $request->getParam('title');
@@ -76,15 +76,15 @@ $app->post('/added', function (Request $request, Response $response, array $args
     $manga->save();
     // Render index view
     return $this->renderer->render($response, 'added.phtml', $args);
-	
-	
+
+
 });
 
 
 $app->get('/delete', function (Request $request, Response $response, array $args) {
     $this->db;
     $mangas = Mangas::all();
-    
+
         return $this->renderer->render($response, 'delete.phtml',['mangas' => $mangas]);
 });
 
@@ -92,18 +92,18 @@ $app->post('/deleted', function (Request $request, Response $response, array $ar
     $this->db;
     Mangas::destroy($request->getParam('id'));
     //$manga = Mangas::find($request->getParam('id'));
-    
+
     //$flight->delete();
     // Render index view
     return $this->renderer->render($response, 'deleted.phtml', $args);
-	
-	
+
+
 });
 
-$app->get('/update', function (Request $request, Response $response, array $args) {
+$app->post('/update', function (Request $request, Response $response, array $args) {
     $this->db;
-    $mangas = Mangas::all();
-    
+    $manga = Mangas::find($request->getParam('id'));
+
         return $this->renderer->render($response, 'update.phtml',['mangas' => $mangas]);
 });
 
@@ -122,14 +122,14 @@ $app->post('/updated', function (Request $request, Response $response, array $ar
    // if($request->getParam('genre')!=''){
         $manga->genre = $request->getParam('genre');
    // }
-    
+
     $manga->genre = $request->getParam('description');
     $manga->save();
 
 
     return $this->renderer->render($response, 'updated.phtml', $args);
-	
-	
+
+
 });
 
 
@@ -139,12 +139,8 @@ $app->post('/updated', function (Request $request, Response $response, array $ar
 
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
    $this->db;
-$mangas = NULL; 
+$mangas = NULL;
 $mangas = Mangas::all();
-    
+
     return $this->renderer->render($response, 'menu.phtml', ['mangas' => $mangas]);
 });
-
-
-
-

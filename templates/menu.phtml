@@ -14,15 +14,13 @@
 
 
 <body>
-    <h1> Mangachier </h1>
-    <div class = "intro">Base de données : Mangas</div>
-
-
+  <!--  <h1> Mangachier </h1>
+    <div class = "intro">Base de données : Mangas</div>-->
     <nav class="navbar navbar-dark bg-dark">
 
         <a class="navbar-brand" href="/menu">Mangachier</a>
-         <p></p>
-          <p></p>
+        <p></p>
+        <p></p>
         <a class="navbar-brand" href="/show">Show</a>
         <a class="navbar-brand" href="/add">Add</a>
         <a class="navbar-brand" href="/update">Update</a>
@@ -59,7 +57,18 @@
          <td><?=$manga->description?></td>
 
 
-         <td><a class="btn btn-primary" role="button" href="/update">Editer </a> <a class="btn btn-primary" role="button" href="/deleted">Supprimer</a></td>
+         <td>
+           <div class="row">
+            <form method="post" class="form-inline" action="/update">
+            <!-- <input type="number" value="<?=$manga->id?>"/>-->
+             <input type="submit" class="btn btn-primary" value="Editer"/>
+           </form>
+           <form class="form-inline" method="post" action="/delete">
+            <!-- <input type="number" value="<?=$manga->id?>"/>-->
+             <input type="submit" class="btn btn-primary" value="Supprimer"/>
+           </form>
+         </div>
+        </td>
 
      </tr>
  <?php endforeach; ?>
