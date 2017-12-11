@@ -3,13 +3,30 @@
     <head>
         <meta charset="utf-8"/>
         <title>Projet web DD : Update</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style_menu.css">
 
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1>Showing the database</h1>
+               <div>
+    <nav class="navbar navbar-dark bg-dark">
 
-<form method="post" action="/updated">
+        <a class="navbar-brand" href="/menu">Mangachier</a>
+        <a class="navbar-brand" href="/add">Add</a>
+
+</nav>
+</div>
+
+ <p></p> <p></p>
+
+ <h1> Mise à jour d'une ligne </h1>
+
+ <p></p>
+
+<form method="post" action="/updated" class = "form_add">
+   <div class="form-group">
     <p><label>id</label> : <input type="number" name="id" min=1 step=1 value="<?=$mangas->id?>"/></p>
 
     <p><label>Titre</label> : <input type="text" name="title" value="<?=$mangas->title?>" /></p>
@@ -31,6 +48,7 @@
 </p>
 <p>
   <label>Description</label>
+</div>
   <input name="description" type="area" value="<?=$mangas->description?>"/>
 </p>
 <input type="submit" value="Mettre à jour" />
