@@ -60,11 +60,11 @@
          <td>
            <div class="row">
             <form method="post" class="form-inline" action="/update">
-            <!-- <input type="number" value="<?=$manga->id?>"/>-->
+              <input type="hidden" name="id" value="<?=$manga->id?>"/>
              <input type="submit" class="btn btn-primary" value="Editer"/>
            </form>
-           <form class="form-inline" method="post" action="/delete">
-            <!-- <input type="number" value="<?=$manga->id?>"/>-->
+           <form class="form-inline" method="post" action="/deleted">
+            <input type="hidden" name="id" value="<?=$manga->id?>"/>
              <input type="submit" class="btn btn-primary" value="Supprimer"/>
            </form>
          </div>

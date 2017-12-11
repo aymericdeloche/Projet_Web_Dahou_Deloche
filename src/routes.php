@@ -102,9 +102,8 @@ $app->post('/deleted', function (Request $request, Response $response, array $ar
 
 $app->post('/update', function (Request $request, Response $response, array $args) {
     $this->db;
-    $manga = Mangas::find($request->getParam('id'));
-
-        return $this->renderer->render($response, 'update.phtml',['mangas' => $mangas]);
+    $mangas = Mangas::find($request->getParam('id'));
+    return $this->renderer->render($response, 'update.phtml',['mangas' => $mangas]);
 });
 
 
@@ -123,7 +122,7 @@ $app->post('/updated', function (Request $request, Response $response, array $ar
         $manga->genre = $request->getParam('genre');
    // }
 
-    $manga->genre = $request->getParam('description');
+        $manga->description = $request->getParam('description');
     $manga->save();
 
 
