@@ -15,14 +15,6 @@ $mangas = Mangas::all();
 
 });
 
-$app->post('/showone', function (Request $request, Response $response, array $args) {
-    $this->db;
-    $mangas = NULL;
-    $mangas = Mangas::$request->getParam('id');
-
-    return $this->renderer->render($response, 'showone.phtml', $args);
-
-});
 
 
 
@@ -81,12 +73,7 @@ $app->post('/added', function (Request $request, Response $response, array $args
 });
 
 
-$app->get('/delete', function (Request $request, Response $response, array $args) {
-    $this->db;
-    $mangas = Mangas::all();
 
-        return $this->renderer->render($response, 'delete.phtml',['mangas' => $mangas]);
-});
 
 $app->post('/deleted', function (Request $request, Response $response, array $args) {
     $this->db;
